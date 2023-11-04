@@ -1,0 +1,72 @@
+:root {
+  /* Primary */
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+
+  /* Neutral */
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--magnolia);
+
+  --color-border: var(--alabaster);
+  --color-border-hover: var(--purplish-blue);
+
+  --color-heading: var(--marine-blue);
+  --color-text: var(--cool-gray);
+
+  --section-gap: 160px;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
