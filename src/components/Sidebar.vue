@@ -6,25 +6,27 @@ const items = ref([
         step: '1',
         text: 'YOUR INFO',
         active: true,
+        visited: true,
     },
     {
         step: '2',
         text: 'SELECT PLAN',
         active: false,
+        visited: true,
     },
     {
         step: '3',
         text: 'ADD-ONS',
         active: false,
+        visited: false,
     },
     {
         step: '4',
         text: 'SUMMARY',
         active: false,
+        visited: false,
     },
 ]);
-
-console.log(items)
 
 </script>
 
@@ -32,7 +34,7 @@ console.log(items)
     <div class="sidebar">
         <ul class="sidebar__list">
             <li v-for="(item, index) in items" :key="'step-number-' + index"
-                :class="{ 'sidebar__item': true, 'sidebar__item--active': item.active }">
+                :class="{ 'sidebar__item': true, 'sidebar__item--active': item.active, 'sidebar__item--visited': item.visited }">
                 <span class="sidebar__number">
                     {{ item.step }}
                 </span>
@@ -52,21 +54,24 @@ console.log(items)
 
 <style lang="scss" scoped>
 .sidebar {
-    min-width: 274px;
-    max-width: 274px;
-    background-image: url('@/assets/images/bg-desktop.svg');
-    /* Use ~@ to reference the src directory */
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    max-width: 100%;
+    background-image: url('@/assets/images/bg-mobile.svg');
     background-size: cover;
     background-position: center;
     padding: 2rem;
+    height: 174px;
 
     ul {
         list-style: none;
         padding: 0;
         margin: 0;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+        flex-direction: row;
+        justify-content: center;
         gap: 2rem;
 
         li {
@@ -74,7 +79,9 @@ console.log(items)
             display: flex;
             align-items: center;
             gap: 1rem;
-            cursor: pointer;
+            opacity: 0.5;
+            cursor: default;
+            pointer-events: none;
 
             &.sidebar__item--active,
             &:hover {
@@ -83,6 +90,12 @@ console.log(items)
                     border-color: var(--light-blue);
                     color: var(--marine-blue);
                 }
+            }
+
+            &.sidebar__item--visited {
+                opacity: 1;
+                cursor: pointer;
+                pointer-events: initial;
             }
         }
 
@@ -106,8 +119,7 @@ console.log(items)
         }
 
         .sidebar__name {
-            display: flex;
-            flex-direction: column;
+            display: none;
         }
 
         .sidebar__label {
@@ -126,6 +138,28 @@ console.log(items)
             line-height: normal;
             letter-spacing: 0.0625rem;
             text-transform: uppercase;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .sidebar {
+        position: relative;
+        top: initial;
+        left: initial;
+        min-width: 274px;
+        max-width: 274px;
+        background-image: url('@/assets/images/bg-desktop.svg');
+        height: 100%;
+
+        ul {
+            flex-direction: column;
+            justify-content: flex-start;
+
+            .sidebar__name {
+                display: flex;
+                flex-direction: column;
+            }
         }
     }
 }
