@@ -114,7 +114,7 @@ const items = ref([
             font-weight: 700;
             letter-spacing: 0.0625rem;
             text-transform: uppercase;
-            padding-left: 2px;
+            padding-left: 1px;
             transition: 0.3s background-color ease-in-out, 0.3s border-color ease-in-out, 0.3s color ease-in-out;
         }
 

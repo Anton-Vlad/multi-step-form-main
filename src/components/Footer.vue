@@ -1,11 +1,18 @@
 <script setup>
-const props = defineProps(['mobile'])
+const props = defineProps(['mobile']);
+const emit = defineEmits(['enter', 'leave']);
+const onMouseover = function ($event) {
+    emit("enter", true);
+}
+const onMouseleave = function ($event) {
+    emit("leave", true);
+}
 </script>
 
 <template>
     <div :class="{ 'form-footer': true, 'form-footer--mobile': mobile }">
 
-        <button type="button" class="btn btn-primary">
+        <button type="button" class="btn btn-primary" @mouseover="onMouseover" @mouseleave="onMouseleave">
             Next Step
         </button>
     </div>

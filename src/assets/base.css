@@ -9,6 +9,7 @@
 
   /* Neutral */
   --cool-gray: hsl(231, 11%, 63%);
+  --cool-gray-2: hsl(231, 23%, 87%);
   --light-gray: hsl(229, 24%, 87%);
   --magnolia: hsl(217, 100%, 97%);
   --alabaster: hsl(231, 100%, 99%);
@@ -20,7 +21,7 @@
 :root {
   --color-background: var(--magnolia);
 
-  --color-border: var(--alabaster);
+  --color-border: var(--cool-gray-2);
   --color-border-hover: var(--purplish-blue);
 
   --color-heading: var(--marine-blue);

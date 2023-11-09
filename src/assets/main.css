@@ -18,6 +18,13 @@ h1 {
   color: var(--marine-blue);
 }
 
+.error-text {
+  color: var(--strawberry-red);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 
 .btn {
   display: inline-flex;
