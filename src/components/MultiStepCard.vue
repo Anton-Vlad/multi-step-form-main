@@ -1,7 +1,11 @@
 <script setup>
+import { ref } from 'vue';
+import { useStepsStore } from '@/stores/steps';
 import Sidebar from '@components/Sidebar.vue';
 import StepOne from '@components/StepOne.vue';
-import Footer from '@components/Footer.vue';
+import FooterMobile from '@components/FooterMobile.vue';
+
+const stepsStore = useStepsStore();
 
 </script>
 
@@ -9,9 +13,9 @@ import Footer from '@components/Footer.vue';
     <div class="card">
         <Sidebar />
 
-        <StepOne />
+        <StepOne v-if="stepsStore.currentStep === 1" />
 
-        <Footer :mobile="true" />
+        <FooterMobile />
     </div>
 </template>
 

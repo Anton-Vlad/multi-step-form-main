@@ -1,21 +1,10 @@
 <script setup>
+import { useFormStore } from '@/stores/form';
 import TextInput from '@components/formInputs/TextInput.vue';
 import Footer from '@components/Footer.vue';
 import { ref } from 'vue';
 
-
-const name = ref(null);
-const email = ref(null);
-const phone = ref(null);
-
 const showRequired = ref(false);
-
-const onHoverEnter = function (payload) {
-    showRequired.value = true;
-}
-const onHoverExit = function (payload) {
-    showRequired.value = false;
-}
 
 </script>
 
@@ -31,16 +20,16 @@ const onHoverExit = function (payload) {
                 </p>
 
                 <form>
-                    <TextInput v-model="name" tag="name" type="text" label="Name" placeholder="e.g. Stephen King"
+                    <TextInput tag="name" type="text" label="Name" placeholder="e.g. Stephen King"
                         :showRequired="showRequired" />
-                    <TextInput v-model="email" tag="email" type="email" label="Email Address"
-                        placeholder="e.g. stephenking@lorem.com" :showRequired="showRequired" />
-                    <TextInput v-model="phone" tag="phone" type="text" label="Phone Number"
-                        placeholder="e.g. +1 234 567 890" :showRequired="showRequired" />
+                    <TextInput tag="email" type="email" label="Email Address" placeholder="e.g. stephenking@lorem.com"
+                        :showRequired="showRequired" />
+                    <TextInput tag="phone" type="text" label="Phone Number" placeholder="e.g. +1 234 567 890"
+                        :showRequired="showRequired" />
                 </form>
             </div>
 
-            <Footer :mobile="false" @enter="onHoverEnter" @leave="onHoverExit" />
+            <Footer :mobile="false" />
         </div>
     </div>
 </template>

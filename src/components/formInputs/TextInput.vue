@@ -1,8 +1,10 @@
 <script setup>
+import { useFormStore } from '@/stores/form';
 import { ref, reactive, computed } from 'vue';
 
-const props = defineProps(['modelValue', 'tag', 'type', 'label', 'placeholder', 'showRequired']);
-const emit = defineEmits(['update:modelValue']);
+const props = defineProps(['tag', 'type', 'label', 'placeholder', 'showRequired']);
+
+const form1 = useFormStore();
 
 const phoneNumberRegex = /^\+\d{1,3} \d{3} \d{3} \d{3}$/;
 const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -13,20 +15,17 @@ const onInput = function ($event) {
     if (props.tag == 'phone' && newVal) {
         if (phoneNumberRegex.test(newVal)) {
             error.value = null;
-            emit('update:modelValue', newVal)
         } else {
             error.value = "Invalid phone number";
         }
     } else if (props.tag == 'email' && newVal) {
         if (emailRegex.test(newVal)) {
             error.value = null;
-            emit('update:modelValue', newVal)
         } else {
             error.value = "Invalid email address";
         }
     } else {
         error.value = null;
-        emit('update:modelValue', newVal)
     }
 }
 
@@ -46,7 +45,7 @@ const displayErrors = computed(() => {
             <span class="error-text">{{ (showRequired ? (modelValue && !error ? "" : "This field is required") : error)
             }}</span>
         </label>
-        <input :id="`${tag}-field`" :type="type" :placeholder="placeholder" :value="modelValue" @input="onInput" />
+        <input :id="`${tag}-field`" :type="type" :placeholder="placeholder" v-model="form1[tag]" @input="onInput" />
     </div>
 </template>
 

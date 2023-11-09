@@ -1,27 +1,29 @@
 <script setup>
 import { ref } from 'vue';
+import { useStepsStore } from '@/stores/steps';
 
+const stepsStore = useStepsStore()
 const items = ref([
     {
-        step: '1',
+        step: 1,
         text: 'YOUR INFO',
-        active: true,
-        visited: true,
+        active: false,
+        visited: false,
     },
     {
-        step: '2',
+        step: 2,
         text: 'SELECT PLAN',
         active: false,
-        visited: true,
+        visited: false,
     },
     {
-        step: '3',
+        step: 3,
         text: 'ADD-ONS',
         active: false,
         visited: false,
     },
     {
-        step: '4',
+        step: 4,
         text: 'SUMMARY',
         active: false,
         visited: false,
@@ -34,7 +36,7 @@ const items = ref([
     <div class="sidebar">
         <ul class="sidebar__list">
             <li v-for="(item, index) in items" :key="'step-number-' + index"
-                :class="{ 'sidebar__item': true, 'sidebar__item--active': item.active, 'sidebar__item--visited': item.visited }">
+                :class="{ 'sidebar__item': true, 'sidebar__item--active': (item.step <= stepsStore.currentStep), 'sidebar__item--visited': (item.step <= stepsStore.currentStep + 1) }">
                 <span class="sidebar__number">
                     {{ item.step }}
                 </span>

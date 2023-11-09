@@ -29,7 +29,7 @@ const canSubmit = computed(() => {
 </script>
 
 <template>
-    <div :class="{ 'form-footer': true, 'form-footer--mobile': false }">
+    <div :class="{ 'form-footer': true, 'form-footer--mobile': true }">
         <button type="button" class="btn btn-primary" :disabled="!canSubmit" @click="onStepSubmit">
             Next Step
         </button>
