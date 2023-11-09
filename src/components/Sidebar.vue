@@ -30,13 +30,19 @@ const items = ref([
     },
 ]);
 
+const goToStep = function (newStep) {
+    // if (stepsStore.currentStep < newStep) {
+    stepsStore.setStep(newStep);
+    // }
+}
 </script>
 
 <template>
     <div class="sidebar">
         <ul class="sidebar__list">
             <li v-for="(item, index) in items" :key="'step-number-' + index"
-                :class="{ 'sidebar__item': true, 'sidebar__item--active': (item.step <= stepsStore.currentStep), 'sidebar__item--visited': (item.step <= stepsStore.currentStep + 1) }">
+                :class="{ 'sidebar__item': true, 'sidebar__item--active': (item.step === stepsStore.currentStep), 'sidebar__item--visited': true }"
+                @click="goToStep(item.step)">
                 <span class="sidebar__number">
                     {{ item.step }}
                 </span>

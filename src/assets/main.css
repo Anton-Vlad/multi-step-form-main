@@ -2,6 +2,7 @@
 @import './base.css';
 @import './scss/footer.scss';
 @import './scss/buttons.scss';
+@import './scss/steps.scss';
 
 #app {
   margin: 0 auto;

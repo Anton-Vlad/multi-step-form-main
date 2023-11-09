@@ -35,47 +35,4 @@ const showRequired = ref(false);
 </template>
 
 
-<style lang="scss" scoped>
-.step {
-    padding: 1.5rem 1rem;
-    padding-top: 0;
-    z-index: 2;
-    position: relative;
-    transform: translateY(6.25rem);
-
-    .step__wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        background: var(--white);
-
-        border-radius: 0.625rem;
-        box-shadow: 0px 25px 40px -20px rgba(0, 0, 0, 0.10);
-        padding: 2rem 1.5rem;
-
-        margin-bottom: 6.25rem;
-    }
-
-    .step__subtext {
-        margin-bottom: 2.2rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .step {
-        flex: 1 1 auto;
-        padding: 2.5rem 5.25rem 1rem 6.25rem;
-        transform: none;
-
-        .step__wrapper {
-            background: transparent;
-            box-shadow: none;
-            border-radius: 0;
-            padding: 0;
-            min-height: initial;
-            margin-bottom: 0;
-        }
-    }
-}
-</style>
+<style lang="scss" scoped></style>

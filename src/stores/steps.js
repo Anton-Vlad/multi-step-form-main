@@ -18,5 +18,8 @@ export const useStepsStore = defineStore("steps", {
     incrementStep(value) {
       this.currentStep += 1;
     },
+    decrementStep(value) {
+      this.currentStep -= 1;
+    },
   },
 });

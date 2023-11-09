@@ -16,6 +16,16 @@
         color: var(--white);
         background-color: var(--marine-blue);
     }
+    &.btn-stipped {
+        background: transparent;
+        border: none;
+        color: var(--cool-gray);
+        line-height: normal;
+
+        &:hover {
+            color: var(--marine-blue);
+        }
+    }
     &:disabled {
         opacity: 0.5;
         pointer-events: none;

@@ -30,6 +30,9 @@ const canSubmit = computed(() => {
 
 <template>
     <div :class="{ 'form-footer': true, 'form-footer--mobile': false }">
+        <button v-if="steps.currentStep > 1" type="button" class="btn btn-stipped form-footer__back">
+            Go Back
+        </button>
         <button type="button" class="btn btn-primary" :disabled="!canSubmit" @click="onStepSubmit">
             Next Step
         </button>
