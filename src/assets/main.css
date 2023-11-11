@@ -1,5 +1,6 @@
 @import './fonts.css';
 @import './base.css';
+@import './scss/sidebar.scss';
 @import './scss/footer.scss';
 @import './scss/buttons.scss';
 @import './scss/steps.scss';
