@@ -5,6 +5,7 @@ import Sidebar from '@components/Sidebar.vue';
 import StepOne from '@components/StepOne.vue';
 import StepTwo from '@components/StepTwo.vue';
 import StepThree from '@components/StepThree.vue';
+import StepFour from '@components/StepFour.vue';
 import FooterMobile from '@components/FooterMobile.vue';
 
 const stepsStore = useStepsStore();
@@ -18,6 +19,7 @@ const stepsStore = useStepsStore();
         <StepOne v-if="stepsStore.currentStep === 1" />
         <StepTwo v-if="stepsStore.currentStep === 2" />
         <StepThree v-if="stepsStore.currentStep === 3" />
+        <StepFour v-if="stepsStore.currentStep === 4" />
 
         <FooterMobile />
     </div>

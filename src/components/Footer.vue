@@ -14,6 +14,9 @@ const plans = usePlansStore();
 const onStepSubmit = function ($event) {
     steps.incrementStep();
 }
+const goBackStep = function ($event) {
+    steps.decrementStep();
+}
 
 const canSubmit = computed(() => {
     if (steps.currentStep === 1) {
@@ -40,13 +43,12 @@ const canSubmit = computed(() => {
 
 <template>
     <div :class="{ 'form-footer': true, 'form-footer--mobile': false }">
-        <button v-if="steps.currentStep > 1" type="button" class="btn btn-stipped form-footer__back">
+        <button v-if="steps.currentStep > 1" type="button" class="btn btn-stipped form-footer__back" @click="goBackStep()">
             Go Back
         </button>
-        <button type="button" class="btn btn-primary" :disabled="!canSubmit" @click="onStepSubmit">
-            Next Step
+        <button type="button" :class="`btn ${steps.currentStep === 4 ? 'btn-secondary' : 'btn-primary'}`"
+            :disabled="!canSubmit" @click="onStepSubmit">
+            {{ (steps.currentStep === 4 ? 'Confirm' : 'Next Step') }}
         </button>
     </div>
 </template>
-
-<style lang="scss" scoped></style>

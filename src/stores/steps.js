@@ -9,8 +9,6 @@ export const useStepsStore = defineStore("steps", {
       currentStepCanSubmit: false,
     };
   },
-  // could also be defined as
-  // state: () => ({ count: 0 })
   actions: {
     setStep(value) {
       this.currentStep = value;

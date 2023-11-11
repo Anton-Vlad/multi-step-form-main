@@ -31,9 +31,7 @@ const items = ref([
 ]);
 
 const goToStep = function (newStep) {
-    // if (stepsStore.currentStep < newStep) {
     stepsStore.setStep(newStep);
-    // }
 }
 </script>
 
@@ -60,4 +58,3 @@ const goToStep = function (newStep) {
     </div>
 </template>
 
-<style lang="scss" scoped></style>
