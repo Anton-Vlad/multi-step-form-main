@@ -4,6 +4,7 @@
 @import './scss/buttons.scss';
 @import './scss/steps.scss';
 @import './scss/plans.scss';
+@import './scss/addons.scss';
 
 #app {
   margin: 0 auto;

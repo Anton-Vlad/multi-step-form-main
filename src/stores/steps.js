@@ -4,7 +4,7 @@ import { defineStore } from "pinia";
 export const useStepsStore = defineStore("steps", {
   state: () => {
     return {
-      currentStep: 2,
+      currentStep: 3,
       maxStep: 4,
       currentStepCanSubmit: false,
     };
