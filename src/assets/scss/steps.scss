@@ -22,8 +22,28 @@
     .step__subtext {
         margin-bottom: 2.2rem;
     }
-}
 
+    &.step--success {
+        .step__wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            min-height: 25rem;
+        }
+
+        img {
+            margin-bottom: 1.5rem;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 0.56rem;
+        }
+        p {
+            text-align: center;
+        }
+    }
+}
 
 @media (min-width: 1024px) {
     .step {
@@ -38,6 +58,19 @@
             padding: 0;
             min-height: initial;
             margin-bottom: 0;
+        }
+
+        &.step--success {
+            .step__wrapper {
+                min-height: initial;
+
+                img {
+                    margin-bottom: 2rem;
+                }
+                h1 {
+                    margin-bottom: 0.88rem;
+                }
+            }
         }
     }
 }

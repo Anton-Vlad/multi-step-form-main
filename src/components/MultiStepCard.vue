@@ -1,27 +1,49 @@
 <script setup>
-import { ref } from 'vue';
+import { computed, markRaw } from 'vue'
 import { useStepsStore } from '@/stores/steps';
 import Sidebar from '@components/Sidebar.vue';
 import StepOne from '@components/StepOne.vue';
 import StepTwo from '@components/StepTwo.vue';
 import StepThree from '@components/StepThree.vue';
 import StepFour from '@components/StepFour.vue';
+import Success from '@components/Success.vue';
 import FooterMobile from '@components/FooterMobile.vue';
 
 const stepsStore = useStepsStore();
 
+const activeComponent = computed(() => {
+    if (stepsStore.showSuccess) {
+        return Success;
+    }
+    switch (stepsStore.currentStep) {
+        case 1:
+            return StepOne;
+            break;
+        case 2:
+            return StepTwo;
+            break;
+        case 3:
+            return StepThree;
+            break;
+        case 4:
+            return StepFour;
+            break;
+        default:
+            return StepOne;
+            break;
+    }
+});
 </script>
 
 <template>
     <div class="card">
         <Sidebar />
 
-        <StepOne v-if="stepsStore.currentStep === 1" />
-        <StepTwo v-if="stepsStore.currentStep === 2" />
-        <StepThree v-if="stepsStore.currentStep === 3" />
-        <StepFour v-if="stepsStore.currentStep === 4" />
+        <Transition name="slide-fade" mode="out-in"> <!--Very important to select mode-->
+            <component :is="activeComponent"></component>
+        </Transition>
 
-        <FooterMobile />
+        <FooterMobile v-if="!stepsStore.showSuccess" />
     </div>
 </template>
 

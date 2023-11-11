@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed } from 'vue';
 import { usePlansStore } from '@/stores/plans';
 import { useAddonsStore } from '@/stores/addons';
 import StepLayout from '@components/StepLayout.vue';

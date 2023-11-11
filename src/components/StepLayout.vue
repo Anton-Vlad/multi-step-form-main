@@ -1,7 +1,9 @@
 <script setup>
+import { useStepsStore } from '@/stores/steps';
 import Footer from '@components/Footer.vue';
 
 const props = defineProps(['step', 'title', 'text']);
+const stepsStore = useStepsStore();
 
 </script>
 
@@ -19,7 +21,7 @@ const props = defineProps(['step', 'title', 'text']);
                 <slot></slot>
             </div>
 
-            <Footer :mobile="false" />
+            <Footer v-if="!stepsStore.showSuccess" :mobile="false" />
         </div>
     </div>
 </template>

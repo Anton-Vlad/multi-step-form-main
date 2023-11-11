@@ -7,16 +7,23 @@ export const useStepsStore = defineStore("steps", {
       currentStep: 4,
       maxStep: 4,
       currentStepCanSubmit: false,
+      showSuccess: false,
     };
   },
   actions: {
     setStep(value) {
+      this.showSuccess = false;
       this.currentStep = value;
     },
-    incrementStep(value) {
+    incrementStep() {
       this.currentStep += 1;
+      if (this.currentStep == 5) {
+        this.currentStep = this.maxStep;
+        this.showSuccess = true;
+      }
     },
     decrementStep(value) {
+      this.showSuccess = false;
       this.currentStep -= 1;
     },
   },
