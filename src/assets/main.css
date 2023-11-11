@@ -6,6 +6,7 @@
 @import './scss/steps.scss';
 @import './scss/plans.scss';
 @import './scss/addons.scss';
+@import './scss/preview.scss';
 
 #app {
   margin: 0 auto;
@@ -24,6 +25,15 @@ h1 {
   color: var(--marine-blue);
 }
 
+h3 {
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 7px;
+  color: var(--color-heading);
+}
+
 .error-text {
   color: var(--strawberry-red);
   font-size: 0.875rem;
@@ -32,11 +42,20 @@ h1 {
   line-height: normal;
 }
 
+.app-link {
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem;
+  text-decoration-line: underline;
+  color: var(--color-text);
+  transition: 0.2s color ease-in-out;
+}
 
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    color: var(--purplish-blue);
   }
 }
 
@@ -51,5 +70,9 @@ h1 {
   h1 {
     margin: 0 0 0.69rem 0;
     font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
   }
 }

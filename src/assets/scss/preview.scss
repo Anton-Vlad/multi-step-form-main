@@ -1,0 +1,91 @@
+.preview-plan {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--alabaster);
+
+    .preview-plan__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0.75rem;
+        
+        &.preview-plan-selected {
+            padding-top: 0;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--color-border);
+
+            .preview-plan__item-price {
+                font-weight: 700;
+            }
+        }
+
+        .preview-plan__item-title {
+            span {
+                text-transform: capitalize;
+                font: inherit
+            }
+        }
+
+        .preview-plan__item-text {
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.25rem;
+            color: var(--color-text);
+        }
+
+        .preview-plan__item-price {
+            text-align: right;
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.25rem;
+            color: var(--marine-blue);
+        }
+    }
+}
+
+.preview-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    .preview-total__text {
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.25rem;
+        color: var(--color-text);
+    }
+
+    .preview-total__price {
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.25rem;
+        color: var(--purplish-blue);
+    }
+}
+
+@media (min-width: 1024px) {
+    .preview-plan {
+        padding: 1rem 1.5rem 1.5rem;
+
+        .preview-plan__item {
+            padding-top: 1rem;
+
+            &.preview-plan-selected {
+                padding-bottom: 1.5rem;
+            }
+        }
+    }
+
+    .preview-total {
+        padding: 1.5rem;
+
+        .preview-total__price {
+            font-size: 1.25rem;
+        }
+    }
+}
