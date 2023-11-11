@@ -23,8 +23,8 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin-bottom: 1rem;
-        padding: 1.12rem 1.5rem;
+        margin-bottom: 0.75rem;
+        padding: 0.81rem 1rem;
         background-color: var(--white);
         border-radius: 0.5rem;
         border: 1px solid var(--color-border);
@@ -40,7 +40,7 @@
         }
 
         .addon__status {
-            padding-right: 1.5rem;
+            padding-right: 1rem;
         }
 
         .addon__price {
@@ -59,16 +59,37 @@
             font-style: normal;
             font-weight: 500;
             line-height: normal;
-            margin-bottom: 7px;
+            margin-bottom: 3px;
             color: var(--color-heading);
         }
 
         .addon__description {
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             line-height: 1.25rem;
             margin-bottom: 0;
             color: var(--color-text);
             font-feature-settings: 'clig' off, 'liga' off;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .addons {
+        .addon {
+            padding: 1.12rem 1.5rem;
+            margin-bottom: 1rem;
+
+            .addon__status {
+                padding-right: 1.5rem;
+            }
+
+            .addon__name {
+                margin-bottom: 7px;
+            }
+
+            .addon__description {
+                font-size: 0.875rem;
+            }
         }
     }
 }
