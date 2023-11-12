@@ -57,6 +57,7 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
+  position: relative;
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -72,4 +73,17 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.attribution {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.attribution a {
+  color: var(--purplish-blue);
+}
+.attribution a:hover {
+  color: var(--purplish-blue-hover);
 }
