@@ -76,6 +76,7 @@ body {
 }
 
 .attribution {
+  display: none;
   position: fixed;
   bottom: 20px;
   left: 50%;
@@ -86,4 +87,10 @@ body {
 }
 .attribution a:hover {
   color: var(--purplish-blue-hover);
+}
+
+@media (min-width: 1024px) {
+  .attribution {
+    display: block;
+  }
 }

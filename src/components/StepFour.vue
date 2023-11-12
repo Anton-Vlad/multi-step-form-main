@@ -2,10 +2,12 @@
 import { computed } from 'vue';
 import { usePlansStore } from '@/stores/plans';
 import { useAddonsStore } from '@/stores/addons';
+import { useStepsStore } from '@/stores/steps';
 import StepLayout from '@components/StepLayout.vue';
 
 const addonsStore = useAddonsStore();
 const plansStore = usePlansStore();
+const stepsStore = useStepsStore()
 
 const selectedAddOns = computed(() => {
     return Object.keys(addonsStore.tree).filter(x => addonsStore.tree[x].selected);
@@ -20,6 +22,10 @@ const totalAmount = computed(() => {
     return total;
 })
 
+const goToStep = function (newStep) {
+    stepsStore.setStep(newStep);
+}
+
 </script>
 <template>
     <StepLayout :step="'four'" :title="`Finishing up`" :text="`Double-check everything looks OK before confirming.`">
@@ -29,7 +35,7 @@ const totalAmount = computed(() => {
                     <h3 class="preview-plan__item-title">
                         {{ plansStore[plansStore.selectedPlan].title }} <span>({{ plansStore.selectedPeriod }})</span>
                     </h3>
-                    <a href="#" class="app-link">
+                    <a href="/" @click.prevent="goToStep(2)" class="app-link">
                         Change
                     </a>
                 </div>
